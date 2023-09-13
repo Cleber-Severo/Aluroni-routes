@@ -3,6 +3,7 @@ import styles from './Prato.module.scss';
 import {  useNavigate, useParams } from 'react-router-dom';
 import classNames from 'classnames';
 import cardapio from 'data/cardapio.json';
+import TagsPrato from 'components/TagsPrato';
 
 export default function Prato() {
   const { id } = useParams();
@@ -21,7 +22,7 @@ export default function Prato() {
         </div>
         <div className={styles.conteudo}>
           <p className={styles.conteudo__descricao}> {prato.description} </p>
-          
+          <TagsPrato {...prato}/>
         </div>
       </section>
     </>
